@@ -2,7 +2,7 @@ Naive Bayes Classifier
 ----------------------
 (c) Tim Nugent
 
-Compile by running 'make'. Uses std=c++11 - on older compilers you may need to change this to 'std=c++0x' in the Makefile
+Compile by running 'make'. Uses std=c++11 - on older compilers you may need to change this to 'std=c++0x' in the Makefile.
 
 Run all tests with 'make test'
 
@@ -52,7 +52,7 @@ Then train and classify as follows:
 Bernoulli example
 -----------------
 
-Example based taken from here:
+Example taken from here:
 http://www.inf.ed.ac.uk/teaching/courses/inf2b/learnnotes/inf2b-learn-note07-2up.pdf
 
 	echo "+1 1:1 2:0 3:0 4:0 5:1 6:1 7:1 8:1" > training.data

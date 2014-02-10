@@ -87,7 +87,7 @@ int main(int argc, const char* argv[]){
     map<int,int> n;
     map<int,double> priors;
     map<int,vector<double> > multinomial_likelihoods;
-    map<int,int> nonzero_features;
+    map<int,int> multinomial_sums;
     map<int,vector<double> > sum_x;
     map<int,vector<double> > means;
     map<int,vector<double> > variances;
@@ -112,7 +112,7 @@ int main(int argc, const char* argv[]){
                         sum_x[label] = empty;
                     }
                     sum_x[label][i-1] += values[i-1];
-                    nonzero_features[label] += values[i-1];
+                    multinomial_sums[label] += values[i-1];
                 }
                 if(values.size() != sum_x[label].size()){
                     cout << "# inconsistent feature count! sparse data not supported yet." << endl;
@@ -159,8 +159,8 @@ int main(int argc, const char* argv[]){
 
         // Calculate multinomial likelihoods
         for(unsigned int i = 0; i < feature_means.size(); i++){
-            double mnl = (sum_x[it->first][i]+alpha)/(nonzero_features[it->first]+(alpha*feature_means.size()));
-            //cout << sum_x[it->first][i] << " + 1 / " << nonzero_features[it->first] << " + " << feature_means.size() << endl;
+            double mnl = (sum_x[it->first][i]+alpha)/(multinomial_sums[it->first]+(alpha*feature_means.size()));
+            //cout << sum_x[it->first][i] << " + 1 / " << multinomial_sums[it->first] << " + " << feature_means.size() << endl;
             multinomial_likelihoods[it->first].push_back(mnl);
         }
 

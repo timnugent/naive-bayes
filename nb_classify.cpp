@@ -36,7 +36,7 @@ void usage(const char* prog){
    cout << "-d <int> Decsion rule. 1 = gaussian (default)" << endl;
    cout << "                       2 = multinomial" << endl;
    cout << "                       3 = bernoulli" << endl;
-   cout << "-a       Smoothing parameter alpha. default 1.0 (Laplace)" << endl << endl;      
+   cout << "-a       Smoothing parameter alpha. default 1.0 (Laplace)" << endl;      
    cout << "-v       Verbose." << endl << endl;      
 }
 

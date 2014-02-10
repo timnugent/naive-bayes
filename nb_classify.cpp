@@ -36,6 +36,7 @@ void usage(const char* prog){
    cout << "-d <int> Decsion rule. 1 = gaussian (default)" << endl;
    cout << "                       2 = multinomial" << endl;
    cout << "                       3 = bernoulli" << endl;
+   cout << "-a       Smoothing parameter alpha. default 1.0 (Laplace)" << endl << endl;      
    cout << "-v       Verbose." << endl << endl;      
 }
 
@@ -58,6 +59,9 @@ int main(int argc, const char* argv[]){
             if(string(argv[i]) == "-d" && i < argc-1){
                 decision = atoi(argv[i+1]);
             }
+            if(string(argv[i]) == "-a" && i < argc-1){
+                alpha = atof(argv[i+1]);
+            }
             if(string(argv[i]) == "-v"){
                 verbose = 1;
             }
@@ -79,6 +83,7 @@ int main(int argc, const char* argv[]){
             cout << "# decision rule: gaussian" << endl;
             break;
     }    
+    cout << "# alpha param:   " << alpha << endl;
     cout << "# training data: " << argv[argc-2] << endl;
     cout << "# test data:     " << argv[argc-1] << endl;
 

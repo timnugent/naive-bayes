@@ -15,7 +15,7 @@ Training and test data should be in svm-light/libsvm format, e.g.
 +1 1:4.12069 2:11.3896 3:18.5742 4:2.85764 5:53.4406 
 -1 1:3.14565 2:17.4338 3:19.3353 4:2.63431 5:56.4233
 
-The -d flag is the decision rule, option 1 = Gaussian (default), 2 = Multinomial and 3 = Bernoulli. -v flag turns verbose mode on - use this to see the classification results.
+The -d flag is the decision rule, option 1 = Gaussian (default), 2 = Multinomial and 3 = Bernoulli. -v flag turns verbose mode on - use this to see the classification results. The -a flag passes the smoothing parameter used in the multinomial decision rule (default 1.0, Laplace smoothing).
 
 Gaussian example
 ----------------

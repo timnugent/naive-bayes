@@ -211,7 +211,7 @@ int main(int argc, const char* argv[]){
                             break;
                         case 3:
                             // Bernoulli
-                            numer *= (pow(means[it->first][j],values[j])) * (pow((1.0-means[it->first][j]),(1.0-values[j])));
+                            numer *= (pow(means[it->first][j],values[j]) * pow((1.0-means[it->first][j]),(1.0-values[j])));
                             break;   
                         default:
                             // Gaussian
